@@ -4,6 +4,7 @@ from datetime import datetime
 import asyncio
 import os
 from dotenv import load_dotenv
+from zoneinfo import ZoneInfo
 
 # Load environment variables
 load_dotenv()
@@ -11,7 +12,7 @@ load_dotenv()
 # Bot configuration
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')  # Your bot token
 CHANNEL_ID = int(os.getenv('CHANNEL_ID'))  # Your channel ID
-SEND_TIME = "20:45"  # Time to send daily message (24-hour format)
+SEND_TIME = "20:47"  # Time to send daily message (24-hour format)
 
 # Create bot instance with necessary intents
 intents = discord.Intents.default()
@@ -27,7 +28,7 @@ async def on_ready():
 @tasks.loop(minutes=1)
 async def daily_checkin():
     """Check every minute if it's time to send the daily message"""
-    now = datetime.now()
+    now = datetime.now(ZoneInfo("Australia/Sydney"))
     current_time = now.strftime("%H:%M")
     
     # Check if it's the right time to send
