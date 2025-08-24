@@ -37,7 +37,7 @@ async def daily_checkin():
         if channel:
             # Format date as DD/MM/YY
             date_str = now.strftime("%d/%m/%y")
-            message = f"**{date_str}: Activity Completed?**"
+            message = f"{date_str}: Activity Completed?"
             
             # Send message and add reaction options
             sent_message = await channel.send(message)
