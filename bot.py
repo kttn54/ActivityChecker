@@ -12,7 +12,7 @@ load_dotenv()
 # Bot configuration
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')  # Your bot token
 CHANNEL_ID = int(os.getenv('CHANNEL_ID'))  # Your channel ID
-SEND_TIME = "09:00"  # Time to send daily message (24-hour format)
+SEND_TIME = "23:00"  # Time to send daily message (24-hour format)
 
 # Create bot instance with necessary intents
 intents = discord.Intents.default()
