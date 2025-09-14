@@ -41,8 +41,8 @@ async def daily_checkin():
             
             # Send message and add reaction options
             sent_message = await channel.send(message)
-            await sent_message.add_reaction("✅")  # Yes
-            await sent_message.add_reaction("❌")  # No
+            # await sent_message.add_reaction("✅")  # Yes
+            # await sent_message.add_reaction("❌")  # No
             
             print(f"Daily check-in sent at {current_time}")
         
